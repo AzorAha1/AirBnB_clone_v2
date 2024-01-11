@@ -20,10 +20,7 @@ sudo mkdir -p /data/web_static/releases/
 sudo mkdir -p /data/web_static/shared/
 sudo mkdir -p /data/web_static/releases/test/
 echo "$htmlcontent" | sudo tee -a "$source/index.html"
-if [ -e "$symlink" ]; then
-    sudo rm "$symlink"
-fi
-sudo ln -s $source $symlink
+sudo ln -sf $source $symlink
 sudo chown -R ubuntu:ubuntu /data/
 sudo sed -i "/server {/a $configcode" "$configfile"
 sudo service nginx restart
