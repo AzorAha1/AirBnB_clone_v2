@@ -7,6 +7,8 @@ configcode="    location /hbnb_static {\n\talias /data/web_static/current/;\n\ti
 configfile=/etc/nginx/sites-enabled/default
 htmlcontent="
 <html>
+    <head>
+    </head>
     <body>
         Holberton School
     </body>
