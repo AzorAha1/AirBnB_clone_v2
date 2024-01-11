@@ -12,10 +12,8 @@ htmlcontent="
     </body>
 </html>
 "
-if ! command -v nginx &> /dev/null; then
-    sudo apt-get update
-    sudo apt-get install -y nginx
-fi
+sudo apt-get update
+sudo apt-get install -y nginx
 sudo mkdir -p /data/
 sudo mkdir -p /data/web_static/
 sudo mkdir -p /data/web_static/releases/
