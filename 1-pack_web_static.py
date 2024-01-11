@@ -6,6 +6,7 @@ from datetime import datetime
 
 
 def do_pack():
+    """do pack"""
     time = datetime.now().strftime("%Y%m%d%H%M%S")
     archive_name = f"web_static_{time}.tgz"
     source = "web_static"
