@@ -12,8 +12,5 @@ def do_pack():
     source = "web_static"
     os.makedirs(destination, exist_ok=True)
     destination = "versions"
-    run = local(f'tar -czvf {destination}/{archive_name} {source}')
-    if run.failed:
-        return None
-    else:
-        return os.path.join(destination, archive_name)
+    local(f'tar -czvf {destination}/{archive_name} {source}')
+    return os.path.join(destination, archive_name)
