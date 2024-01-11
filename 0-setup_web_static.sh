@@ -3,7 +3,7 @@
 
 source=/data/web_static/releases/test/
 symlink=/data/web_static/current
-configcode="location /hbnb_static {\n\talias /data/web_static/current/;\n\tindex index.html;\n\t}"
+configcode="    location /hbnb_static {\n\talias /data/web_static/current/;\n\tindex index.html;\n\t}"
 configfile=/etc/nginx/sites-enabled/default
 if ! command -v nginx &> /dev/null; then
     sudo apt-get update
