@@ -7,20 +7,20 @@ from flask import escape
 app = Flask(__name__)
 
 
-@app.route('/python/<text>')
+@app.route('/python/<text>', strict_slashes=False)
 def show_python_is_cool(text="is cool"):
     """display python followed by text but is cool is constant"""
     text = text.replace('_', ' ')
-    return f'Python {escape(text)}'
+    return f'Python {text}'
 
 
-@app.route('/')
+@app.route('/', strict_slashes=False)
 def hello_hbnb():
     """function to return hello hbnb """
     return "Hello HBNB!"
 
 
-@app.route('/hbnb')
+@app.route('/hbnb', strict_slashes=False)
 def hbnb():
     """function to return hbnb with /hbnb url"""
     return "HBNB"
