@@ -6,6 +6,7 @@ from flask import Flask
 from flask import escape
 app = Flask(__name__)
 
+
 @app.route('/python/')
 @app.route('/python/<text>', strict_slashes=False)
 def show_python_is_cool(text='is cool'):
