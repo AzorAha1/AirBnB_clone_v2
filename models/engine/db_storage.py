@@ -45,20 +45,20 @@ class DBStorage:
                 list_of_objs = self.__session.query(_class).all()
 
                 for obj in list_of_objs:
-                    key = obj.__class__.__name__ + '.' + obj.id
+                    key = f"{obj.__class__.__name__ }.{obj.id}"
                     objcts_dict[key] = obj
 
             return objcts_dict
 
         cls = eval(cls) if type(cls) is str else cls
-        if cls is not self.class_list:
+        if cls not in self.class_list:
             return None
 
         objct_list = self.__session.query(cls).all()
         for obj in objct_list:
-            key = type(obj).__name__ + '.' + obj.id
+            key = f"{type(obj).__name__}.{obj.id}"
             objcts_dict[key] = obj
-        return self.dict_of_objects
+        return objcts_dict
 
     def new(self, obj):
         """Adds new object to the current db"""
