@@ -5,6 +5,7 @@
 from flask import Flask
 from flask import escape
 from flask import render_template
+from models.state import State
 from models import storage
 app = Flask(__name__)
 
@@ -17,5 +18,5 @@ def teardown():
 
 @app.route('/states_list')
 def states(state):
-    state = storage.all()
+    state = storage.all(State)
     return render_template('7-states_list.html')
