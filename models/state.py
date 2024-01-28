@@ -11,11 +11,9 @@ from models import hbnb_storage
 class State(BaseModel, Base):
     """ State class """
     __tablename__ = 'states'
-    
     name = Column(String(128), nullable=False)
     cities = relationship(
             'City', backref='State', cascade='all, delete-orphan',
-            single_parent=True
             )
 
     @property
