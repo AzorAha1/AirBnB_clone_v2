@@ -23,11 +23,9 @@ class State(BaseModel, Base):
         """Returns City instances"""
         from models import storage
         from models.city import City
-        # all_cities = storage.all(City)
-        # return [city for city in all_cities.values()
-        #         if city.state_id == self.id]
         listofcity = []
-        for city in storage.all(City).values():
+        all_cities = storage.all(City)
+        for city in all_cities.values():
             if city.state_id == self.id:
                 listofcity.append(city)
         return listofcity
